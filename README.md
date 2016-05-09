@@ -8,3 +8,12 @@ Current status: nothing here.
 
 Chris Greenhalgh, Copyright (c) The University of Nottingham, 2016
 
+## building ...
+
+Done...
+```
+ionic platform add android
+ionic resources
+```
+
+
