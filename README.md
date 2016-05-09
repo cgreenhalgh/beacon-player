@@ -14,6 +14,8 @@ Done...
 ```
 ionic platform add android
 ionic resources
+cordova plugin add https://github.com/petermetz/cordova-plugin-ibeacon.git
 ```
+[ng-cordova-beacon.min.js](https://github.com/nraboy/ng-cordova-beacon/blob/master/dist/ng-cordova-beacon.min.js)
 
 
