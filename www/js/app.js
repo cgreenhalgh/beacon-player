@@ -26,21 +26,30 @@ angular.module('starter', ['ionic', 'ngCordovaBeacon'])
 .controller("ExampleController", function($scope, $rootScope, $ionicPlatform, $cordovaBeacon) {
  
     $scope.beacons = {};
- 
+    $scope.lastRangeTime = 0;
+    
     $ionicPlatform.ready(function() {
  
-        $cordovaBeacon.requestWhenInUseAuthorization();
+        //$cordovaBeacon.requestWhenInUseAuthorization();
+        $cordovaBeacon.requestAlwaysAuthorization();
  
         $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
+        	$scope.lastRangeTime = new Date().getTime();
             var uniqueBeaconKey;
             for(var i = 0; i < pluginResult.beacons.length; i++) {
                 uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
                 $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
+                $scope.beacons[uniqueBeaconKey].date = new Date();
+                console.log('Beacon '+JSON.stringify(pluginResult.beacons[i]));
             }
             $scope.$apply();
         });
  
-        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "b9407f30-f5f8-466e-aff9-25556b57fe6d"));
+        // Jaalee ? EBEFD083-70A2-47C8-9837-E7B5634DF524
+        //$cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("jaalee","EBEFD083-70A2-47C8-9837-E7B5634DF524"));
+        // specific example... ACD6C87A-62D9-F53D-1CE4-F7726B53D4DA 12 58456 (proximity beacon)
+        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("jaalee-james","ACD6C87A-62D9-F53D-1CE4-F7726B53D4DA"));
+        //$cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "b9407f30-f5f8-466e-aff9-25556b57fe6d"));
  
     });
 });
