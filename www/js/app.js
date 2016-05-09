@@ -37,6 +37,8 @@ angular.module('starter', ['ionic', 'ngCordovaBeacon'])
         	$scope.lastRangeTime = new Date().getTime();
             var uniqueBeaconKey;
             for(var i = 0; i < pluginResult.beacons.length; i++) {
+            	// e.g. {"proximity":"ProximityImmediate","tx":-60,"rssi":-39,"uuid":"acd6c87a-62d9-f53d-1ce4-f7726b53d4da","accuracy":0.02,"minor":"7256","major":"12"}],"eventType":"didRangeBeaconsInRegion"}
+            	// I think James has minor ID rotating pseudo-randomly! - I often see other minor IDs!
                 uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
                 $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
                 $scope.beacons[uniqueBeaconKey].date = new Date();

@@ -51,11 +51,11 @@
 		                    {{value.proximity}}
 		                </div>
 		                <div class="col">
-		                    When: {{value.date}}
+		                    {{value.accuracy}}
 		                </div>
 		            </div>
 		            <div class="row">
-		                <div class="col">Debug: {{value|json}}</div>
+		                <div class="col">Age: {{value.date.getTime()-lastRangeTime}} ({{value.date}})</div>
 		            </div>
 		        </div>
 		    </div>
