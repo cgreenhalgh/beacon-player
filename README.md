@@ -27,3 +27,6 @@ Tried the following Android apps for testing and checking UUIDs:
 - eBeacon by JAALEE, Inc. - worked with a re-programmed JAALEE tag
 - Locate Beacon, by Radius Networks, Inc - did not detect the re-programmed JAALEE tag
 
+UUID of borrowed beacons:
+- F7826DA6-4FA2-4E98-8024-BC5B71E0893E - from James
+
