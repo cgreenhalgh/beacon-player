@@ -21,4 +21,9 @@ ionic build android
 ```
 [ng-cordova-beacon.min.js](https://github.com/nraboy/ng-cordova-beacon/blob/master/dist/ng-cordova-beacon.min.js)
 
+## beacons
+
+Tried the following Android apps for testing and checking UUIDs:
+- eBeacon by JAALEE, Inc. - worked with a re-programmed JAALEE tag
+- Locate Beacon, by Radius Networks, Inc - did not detect the re-programmed JAALEE tag
 
