@@ -14,11 +14,12 @@ Done...
 ```
 ionic platform add android
 ionic resources
-cordova plugin add https://github.com/petermetz/cordova-plugin-ibeacon.git
+cordova plugin add https://github.com/cgreenhalgh/cordova-plugin-ibeacon
 ionic browser add crosswalk
 
 ionic build android
 ```
+
 [ng-cordova-beacon.min.js](https://github.com/nraboy/ng-cordova-beacon/blob/master/dist/ng-cordova-beacon.min.js)
 
 ## beacons

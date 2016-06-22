@@ -30,6 +30,14 @@ angular.module('starter', ['ionic', 'ngCordovaBeacon'])
     
     $ionicPlatform.ready(function() {
  
+    	// Note: non-standard function for beacon plugin - use https://github.com/cgreenhalgh/cordova-plugin-ibeacon
+    	try {
+    		cordova.plugins.locationManager.setRssiFilterRunningAverage(2000);
+    	}
+    	catch (err) {
+    		console.log('Error setting RSSI filter on locationManager '+cordova.plugins.locationManager+': '+err.message,err);
+    	}
+ 
         //$cordovaBeacon.requestWhenInUseAuthorization();
         $cordovaBeacon.requestAlwaysAuthorization();
  
@@ -50,7 +58,7 @@ angular.module('starter', ['ionic', 'ngCordovaBeacon'])
         // Jaalee ? EBEFD083-70A2-47C8-9837-E7B5634DF524
         //$cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("jaalee","EBEFD083-70A2-47C8-9837-E7B5634DF524"));
         // specific example... ACD6C87A-62D9-F53D-1CE4-F7726B53D4DA 12 58456 (proximity beacon)
-        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("jaalee-james","ACD6C87A-62D9-F53D-1CE4-F7726B53D4DA"));
+        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("kontakt-wayward","f7826da6-4fa2-4e98-8024-bc5b71e0893e"));
         //$cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "b9407f30-f5f8-466e-aff9-25556b57fe6d"));
  
     });
